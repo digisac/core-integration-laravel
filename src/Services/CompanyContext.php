@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace DigiSac\Base\Services;
 
-use App\Models\Company;
-use App\Models\User;
-use App\Services\Contracts\Context;
+use DigiSac\Base\Models\Company;
+use DigiSac\Base\Models\User;
+use DigiSac\Base\Services\Contracts\Context;
 
 class CompanyContext implements Context
 {

@@ -2,7 +2,7 @@
 
 namespace DigiSac\Base;
 
-use Collective\Html\HtmlServiceProvider;
+//use Collective\Html\HtmlServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
 use DigiSac\Base\Providers\EventServiceProvider;
@@ -27,7 +27,7 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
     {
         $this->app->register(DigiSacAppServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
-        $this->app->register(HtmlServiceProvider::class);
+        //$this->app->register(HtmlServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(RepositoryServiceProvider::class);
 

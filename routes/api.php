@@ -20,8 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 });
 
-Route::group(['prefix' => 'v1', 'namespace' => 'Api\v1'], function () {
+Route::apiResource('companies', 'CompanyController');
 
-    Route::apiResource('companies', 'CompanyController');
-
+Route::get('ping', static function () {
+    return 'ok';
 });
+

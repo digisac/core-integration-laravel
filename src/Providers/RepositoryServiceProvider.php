@@ -10,28 +10,28 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            \App\Repositories\AccessAuthorizationRepository::class,
-            \App\Repositories\AccessAuthorizationRepositoryEloquent::class
+            \DigiSac\Base\Repositories\AccessAuthorizationRepository::class,
+            \DigiSac\Base\Repositories\AccessAuthorizationRepositoryEloquent::class
         );
 
         $this->app->bind(
-            \App\Repositories\BilletRepository::class,
-            \App\Repositories\BilletRepositoryEloquent::class
+            \DigiSac\Base\Repositories\BilletRepository::class,
+            \DigiSac\Base\Repositories\BilletRepositoryEloquent::class
         );
 
         $this->app->bind(
-            \App\Repositories\CompanyRepository::class,
-            \App\Repositories\CompanyRepositoryEloquent::class
+            \DigiSac\Base\Repositories\CompanyRepository::class,
+            \DigiSac\Base\Repositories\CompanyRepositoryEloquent::class
         );
 
         $this->app->bind(
-            \App\Repositories\ContactRepository::class,
-            \App\Repositories\ContactRepositoryEloquent::class
+            \DigiSac\Base\Repositories\ContactRepository::class,
+            \DigiSac\Base\Repositories\ContactRepositoryEloquent::class
         );
 
         $this->app->bind(
-            \App\Repositories\TransactionRepository::class,
-            \App\Repositories\TransactionRepositoryEloquent::class
+            \DigiSac\Base\Repositories\TransactionRepository::class,
+            \DigiSac\Base\Repositories\TransactionRepositoryEloquent::class
         );
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Presenters;
+namespace DigiSac\Base\Presenters;
 
-use App\Transformers\DefaultTransformer;
+use DigiSac\Base\Transformers\DefaultTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**

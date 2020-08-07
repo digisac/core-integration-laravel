@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateAccessAuthorizationTable extends Migration
+class CreateBilletTable extends Migration
 {
     /**
      * Run the migrations.

@@ -1,5 +1,5 @@
 <?php
-namespace App\Services\Contracts;
+namespace DigiSac\Base\Services\Contracts;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 

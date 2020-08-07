@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace DigiSac\Base\Http\Controllers\Api\v1;
 
-use App\Repositories\CompanyRepository;
-use App\Http\Requests\Campaign\CampaignRequest;
+use DigiSac\Base\Repositories\CompanyRepository;
+use DigiSac\Base\Http\Requests\Campaign\CampaignRequest;
 
 class CompanyController extends BaseApiController
 {

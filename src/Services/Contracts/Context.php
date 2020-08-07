@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Contracts;
+namespace DigiSac\Base\Services\Contracts;
 
-use App\Models\Company;
+use DigiSac\Base\Models\Company;
 
 interface Context
 {
