@@ -1,0 +1,50 @@
+{
+    "name": "digisac/core-integration-laravel",
+    "homepage": "https://github.com/digisac/core-integration-laravel",
+    "description": "Núcleo de Integração DigiSac",
+    "type": "library",
+    "license": "MIT",
+    "authors": ["Edson Alves <edson.alves@ikatec.com.br"],    
+    "require": {
+        "php": "^7.2.5",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "league/fractal": "^0.19.2",
+        "prettus/l5-repository": "^2.6",
+        "spatie/laravel-fractal": "^5.7",
+        "webpatser/laravel-uuid": "^3.0",
+        "williamoliveira/eloquent-array-query-builder": "1.4.4"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.0",
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "DigiSac\\Base": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DigiSac\\Base\\DigiSacCoreIntegrationServiceProvider"
+            ]
+        }
+    }
+}
