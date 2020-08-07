@@ -4,7 +4,12 @@
     "description": "Núcleo de Integração DigiSac",
     "type": "library",
     "license": "MIT",
-    "authors": ["Edson Alves <edson.alves@ikatec.com.br"],    
+    "authors": [
+        {
+            "name": "Edson Alves",
+            "email" : "edson.alves@ikatec.com.br"
+        }
+    ],    
     "require": {
         "php": "^7.2.5",
         "fruitcake/laravel-cors": "^2.0",
