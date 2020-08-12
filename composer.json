@@ -12,13 +12,14 @@
     ],    
     "require": {
         "php": "^7.2.5",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "league/fractal": "^0.19.2",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-fractal": "^5.7",
         "webpatser/laravel-uuid": "^3.0",
-        "williamoliveira/eloquent-array-query-builder": "1.4.4"
+        "williamoliveira/eloquent-array-query-builder": "1.4.4",
+        "edsonalvesan/digisac": "^v1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
