@@ -18,7 +18,6 @@ class CreateContactsTable extends Migration
             $table->uuid('company_id')->nullable(); 
             $table->uuid('contact_digisac_id')->nullable();   
             $table->uuid('service_digisac_id')->nullable();
-            $table->uuid('ticket_ir')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

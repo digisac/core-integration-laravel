@@ -17,40 +17,9 @@ class Contact extends BaseModel implements Transformable
     public $incrementing = false;
 
     protected $fillable = [
-        'company',
-        'url',
-        'token',
-        'settings',
+        'company_id',
+        'contact_digisac_id',
+        'service_digisac_id'
     ];
-
-    protected $casts = [
-        'settings' => 'array'
-    ];
-
-    protected $appends = [
-
-    ];
-
-    protected $with = [
-       
-    ];
-
-    public function getSetting($key = null, $default = null)
-    {
-        if (!$key) {
-            return $this->settings;
-        }
-
-        return array_get($this->settings, $key, $default);
-    }
-
-    public function setSetting($key, $value)
-    {
-        $settings = $this->settings ? $this->settings : [];
-        array_set($settings, $key, $value);
-        $this->settings = $settings;
-
-        return $this;
-    }
 
 }

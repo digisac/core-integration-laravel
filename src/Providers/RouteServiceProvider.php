@@ -16,7 +16,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::group([
-            'namespace' => 'DigiSac\Base\Http\Controllers',
+            'namespace' => 'DigiSac\Base\Http\Controllers\Api',
             'prefix' => 'api/v1'
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');

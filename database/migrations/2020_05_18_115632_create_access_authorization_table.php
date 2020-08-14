@@ -15,6 +15,7 @@ class CreateAccessAuthorizationTable extends Migration
         Schema::create('access_authorization', function (Blueprint $table) {
             $table->uuid('id');
             $table->primary('id');
+            $table->uuid('company_id')->nullable(); 
             $table->uuid('contact_id')->nullable(); 
             $table->date('expire_at')->nullable();
             $table->softDeletes();

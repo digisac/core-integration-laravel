@@ -10,16 +10,19 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 class Company extends BaseModel implements Transformable
 {
-    use TransformableTrait, SoftDeletes, Uuids;
+    use TransformableTrait, SoftDeletes;
 
     protected $table = 'companies';
 
     public $incrementing = false;
 
     protected $fillable = [
-        'company',
+        'id',
+        'name',
         'url',
         'token',
+        'company_id',
+        'company_agnus_id',
         'settings',
     ];
 

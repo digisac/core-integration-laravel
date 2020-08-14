@@ -20,7 +20,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 });
 
-Route::apiResource('companies', 'CompanyController');
+
+
+Route::namespace('v1')->group(function () {
+    
+    Route::apiResource('companies', 'CompanyController');
+
+    Route::prefix('webhook')->namespace('Webhooks')->group(function () {
+
+        Route::prefix('digisac')->namespace('DigiSac')->group(function () {
+            
+            Route::post('bot-command', 'DigiSacController@botCommand');
+            
+        }); 
+        
+    });
+    
+});
+
 
 Route::get('ping', static function () {
     return 'ok';

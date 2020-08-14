@@ -17,14 +17,11 @@ class Billet extends BaseModel implements Transformable
     public $incrementing = false;
 
     protected $fillable = [
-        'company',
-        'url',
-        'token',
-        'settings',
+
     ];
 
     protected $casts = [
-        'settings' => 'array'
+
     ];
 
     protected $appends = [
@@ -34,23 +31,5 @@ class Billet extends BaseModel implements Transformable
     protected $with = [
        
     ];
-
-    public function getSetting($key = null, $default = null)
-    {
-        if (!$key) {
-            return $this->settings;
-        }
-
-        return array_get($this->settings, $key, $default);
-    }
-
-    public function setSetting($key, $value)
-    {
-        $settings = $this->settings ? $this->settings : [];
-        array_set($settings, $key, $value);
-        $this->settings = $settings;
-
-        return $this;
-    }
 
 }

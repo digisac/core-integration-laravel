@@ -15,10 +15,11 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->uuid('id');
             $table->primary('id');
-            $table->string('company')->nullable();
+            $table->string('name')->nullable();
             $table->string('url')->nullable();
             $table->string('token')->nullable();
-            $table->string('company_id')->nullable();   
+            $table->uuid('company_id')->nullable();   
+            $table->uuid('company_agnus_id')->nullable();   
             $table->text('settings')->nullable();
             $table->softDeletes();
             $table->timestamps();

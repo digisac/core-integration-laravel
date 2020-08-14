@@ -17,7 +17,7 @@ class CreateTransactionTable extends Migration
             $table->primary('id');
             $table->uuid('company_id')->nullable();   
             $table->uuid('contact_id')->nullable();
-            $table->uuid('ticket_ir')->nullable();
+            $table->uuid('ticket_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

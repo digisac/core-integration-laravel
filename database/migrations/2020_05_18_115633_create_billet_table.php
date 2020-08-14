@@ -15,7 +15,8 @@ class CreateBilletTable extends Migration
         Schema::create('billet', function (Blueprint $table) {
             $table->uuid('id');
             $table->primary('id');
-            $table->uuid('transaction_id')->nullable(); 
+            $table->uuid('transaction_id')->nullable();
+            $table->uuid('company_id')->nullable(); 
             $table->softDeletes();
             $table->timestamps();
         });
