@@ -18,7 +18,7 @@
         "spatie/laravel-fractal": "^5.7",
         "webpatser/laravel-uuid": "^3.0",
         "williamoliveira/eloquent-array-query-builder": "1.4.4",
-        "edsonalvesan/digisac": "^v1.2"
+        "edsonalvesan/digisac": "^v1.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
