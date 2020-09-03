@@ -8,6 +8,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use DigiSac\Base\Services\CompanyContext;
 use DigiSac\Base\Services\Contracts\Context;
+use Session;
 
 class DigiSacAppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class DigiSacAppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         $this->app->singleton(Context::class, CompanyContext::class);
     }
 
@@ -29,6 +31,8 @@ class DigiSacAppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views','core-integration-laravel');
+
+
     }
 }
