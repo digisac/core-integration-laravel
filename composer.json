@@ -9,7 +9,7 @@
             "name": "Edson Alves",
             "email" : "edson.alves@ikatec.com.br"
         }
-    ],    
+    ],
     "require": {
         "php": "^7.2.5",
         "guzzlehttp/guzzle": "^6.3",
@@ -17,6 +17,7 @@
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-fractal": "^5.7",
         "webpatser/laravel-uuid": "^3.0",
+        "laravelcollective/html": "^6.0|^7.0",
         "williamoliveira/eloquent-array-query-builder": "1.4.4",
         "edsonalvesan/digisac": "^v1.3"
     },
