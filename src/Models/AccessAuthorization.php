@@ -13,12 +13,11 @@ class AccessAuthorization extends BaseModel implements Transformable
     use TransformableTrait, SoftDeletes, Uuids;
 
     protected $table = 'access_authorization';
+    protected $dates = ['expire_at'];
 
     public $incrementing = false;
 
-    protected $fillable = [
-
-    ];
+    protected $guarded = [];
 
     protected $casts = [
 
@@ -29,7 +28,7 @@ class AccessAuthorization extends BaseModel implements Transformable
     ];
 
     protected $with = [
-       
+
     ];
 
 

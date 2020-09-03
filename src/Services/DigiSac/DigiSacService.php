@@ -13,22 +13,22 @@ use DigiSac\Base\Events\AccessAuthorization\AccessAuthorizationExpiredEvent;
 class DigiSacService
 {
 
-    protected $contactRepository; 
-    protected $accessAuthorizationRepository; 
+    protected $contactRepository;
+    protected $accessAuthorizationRepository;
 
 
-    public function __construct(ContactRepository $contactRepository,AccessAuthorizationCreateEvent $accessAuthorizationRepository)
+    public function __construct(ContactRepository $contactRepository,AccessAuthorizationRepository $accessAuthorizationRepository)
     {
-       $this->contactRepository = $contactRepository;   
-       $this->accessAuthorizationRepository = $accessAuthorizationRepository;   
+       $this->contactRepository = $contactRepository;
+       $this->accessAuthorizationRepository = $accessAuthorizationRepository;
     }
 
     public function botCommand($data)
     {
 
         $contact = $this->contactRepository->findWhere([
-          'company_id' => $data['data']['accountId'],   
-          'contact_digisac_id' => $data['data']['contactId']   
+          'company_id' => $data['data']['accountId'],
+          'contact_digisac_id' => $data['data']['contactId']
         ])->first();
 
         if(!$contact)
@@ -38,7 +38,7 @@ class DigiSacService
 
         if(!$this->isAccessAuthorizationExpired($contact))
         {
-         return Event::dispatch(new AccessAuthorizationExpiredEvent($data,$contact)); 
+         return Event::dispatch(new AccessAuthorizationExpiredEvent($data,$contact));
         }
 
         Event::dispatch(new DigiSacBotCommandEvent($data,$contact));
@@ -55,7 +55,7 @@ class DigiSacService
     }
 
     protected function createAccessAuthorization($data,$contact)
-    { 
+    {
       $this->accessAuthorizationRepository->create([
             'company_id' => $contact->company_id,
             'contact_id' => $contact->contact_id,
@@ -66,13 +66,17 @@ class DigiSacService
 
     protected function isAccessAuthorizationExpired($contact)
     {
-      $access = $this->accessAuthorizationRepository->findWhere([
-        'contact_id' => $contact->id
-      ]);
+      $access = $this->accessAuthorizationRepository->where([
+        'id' => $contact->id
+      ])->first();
+
+      if(!$access){
+          return false;
+      }
 
       $now = Carbon::now();
 
-      return ($now->date > $access->expire_at);
+      return ($now > $access->expire_at);
 
     }
 
