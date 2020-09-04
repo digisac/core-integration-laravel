@@ -25,7 +25,7 @@ class CompanyRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'url' => 'required|url',
+            'url' => 'required',
             'token' => 'required',
             'company_id' => 'required',
             'company_agnus_id' => 'required',
