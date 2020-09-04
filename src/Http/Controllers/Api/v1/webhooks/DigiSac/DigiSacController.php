@@ -23,8 +23,9 @@ class DigiSacController extends Controller
           return ['success' => 'success'];
         }
         $digisac = app()->make(DigiSacService::class);
-        
         $digisac->botCommand($data);
+        
+
         return ['success' => 'success'];
     }
 

@@ -8,10 +8,10 @@
     <!-- Fonts -->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">    <!-- Styles -->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/vendor/digisac/core-integration-laravel/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/favicon.jpg" type="image/x-icon">
-    <script src="/js/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/vendor/digisac/core-integration-laravel/img/favicon.jpg" type="image/x-icon">
+    <script src="/vendor/digisac/core-integration-laravel/js/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body id="page-top">
 <!-- Page Wrapper -->
@@ -22,7 +22,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon">
-                <img class="w-100 p-4 " src="/img/logo.png" alt="DigiSac - Plataforma Multicanal"
+                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel//img/logo.png" alt="DigiSac - Plataforma Multicanal"
                      title="DigiSac - PABX Digital"/>
             </div>
         </a>
@@ -116,9 +116,9 @@
 
 </div>
 <!-- Scripts -->
-<script src="/js/bootstrap.min.js"></script>
+<script src="/vendor/digisac/core-integration-laravel/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="/js/sb-admin-2.min.js"></script>
+<script src="/vendor/digisac/core-integration-laravel/js/sb-admin-2.min.js"></script>
 <script>
     $(function(){
 

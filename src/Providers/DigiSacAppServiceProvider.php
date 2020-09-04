@@ -31,6 +31,9 @@ class DigiSacAppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([__DIR__.'/public'=>public_path('vendor/digisac/core-integration-laravel')]);
+
+
         $this->loadViewsFrom(__DIR__ . '/../../resources/views','core-integration-laravel');
 
 
