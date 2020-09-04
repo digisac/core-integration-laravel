@@ -14,7 +14,8 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id');
+            $table->primary('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
@@ -24,11 +25,12 @@ class CreateUsersTable extends Migration
 
         //DEV
         \Illuminate\Support\Facades\DB::table('users')->insert(
-          array(
-            'name'=>'DigiSac Admin',
-            'email'=>'admin@digisac.com.br',
-            'password'=>md5('digisac123')
-          )
+            array(
+                'id' => file_get_contents('/proc/sys/kernel/random/uuid'),
+                'name' => 'DigiSac Admin',
+                'email' => 'admin@digisac.com.br',
+                'password' => md5('digisac123')
+            )
         );
     }
 

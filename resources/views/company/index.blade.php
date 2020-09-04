@@ -35,8 +35,8 @@
             </div>
         </div>
     </div>
-    <script src="/js/jquery.dataTables.min.js"></script>
-    <script src="/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/vendor/digisac/core-integration-laravel/js/jquery.dataTables.min.js"></script>
+    <script src="/vendor/digisac/core-integration-laravel/js/dataTables.bootstrap4.min.js"></script>
     <style>
         .dataTables_filter {
             float: right;

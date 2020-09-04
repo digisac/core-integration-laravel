@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Empresas</h1>
-    <p class="mb-4">Cadastrar Nova</a>.</p>
+    <p class="mb-4">Alterar Empresa</a>.</p>
 
     <div class="row">
         <div class="col-lg-12 order-lg-1">
@@ -14,7 +14,7 @@
                             <strong class="w-100 d-lg-block">Atenção ao seguinte: </strong>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('company.store')  }}" autocomplete="off">
+                    <form method="POST" action="{{ route('company.update',$Company->id)  }}" autocomplete="off">
                         {!! csrf_field() !!}
                         <div class="pl-lg-4">
                             <div class="row">
@@ -24,7 +24,7 @@
                                             <span class="small text-danger">*</span>
                                         </label>
                                         <input type="text" class="form-control" name="name" placeholder="Name"
-                                               value="{{ old('name') }}"/>
+                                               value="{{ old('name',$Company->name) }}"/>
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
@@ -35,17 +35,8 @@
                                         <label class="form-control-label">URL
                                             <span class="small text-danger">*</span>
                                         </label>
-
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">https://</span>
-                                            </div>
-                                            <input type="text" class="form-control" name="url"
-                                                   placeholder="" value="{{ old('url') }}"/>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">.digisac.com.br</span>
-                                            </div>
-                                        </div>
+                                        <input type="text" class="form-control" name="url"
+                                               placeholder="http://" value="{{ old('url',$Company->url) }}"/>
                                         @if ($errors->has('url'))
                                             <span class="text-danger">{{ $errors->first('url') }}</span>
                                         @endif
@@ -61,7 +52,7 @@
                                         </label>
                                         <input type="text" class="form-control" name="token"
                                                placeholder="Token"
-                                               value="{{ old('token') }}"/>
+                                               value="{{ old('token',$Company->token) }}"/>
                                         @if ($errors->has('token'))
                                             <span class="text-danger">{{ $errors->first('token') }}</span>
                                         @endif
@@ -76,7 +67,7 @@
                                             <span class="small text-danger">*</span>
                                         </label>
                                         <input type="text" class="form-control" name="company_id" placeholder=""
-                                               value="{{ old('company_id') }}"/>
+                                               value="{{ old('company_id',$Company->company_id) }}"/>
                                         @if ($errors->has('company_id'))
                                             <span class="text-danger">{{ $errors->first('company_id') }}</span>
                                         @endif
@@ -88,7 +79,7 @@
                                             <span class="small text-danger">*</span>
                                         </label>
                                         <input type="text" class="form-control" name="company_agnus_id"
-                                               placeholder="ID Agnus" value="{{ old('company_agnus_id') }}"/>
+                                               placeholder="ID Agnus"  value="{{ old('company_agnus_id',$Company->company_agnus_id) }}"/>
                                         @if ($errors->has('company_agnus_id'))
                                             <span class="text-danger">{{ $errors->first('company_agnus_id') }}</span>
                                         @endif
@@ -101,8 +92,9 @@
                                         <label class="form-control-label">Configurações
                                             <span class="small text-danger">*</span>
                                         </label>
-                                        <textarea rows="5" class="form-control"
-                                                  name="settings">{{ old('settings') }}</textarea>
+<textarea rows="5" class="form-control" name="settings">
+{{ old('settings',$Company->settings) }}
+</textarea>
                                         @if ($errors->has('settings'))
                                             <span class="text-danger">{{ $errors->first('settings') }}</span>
                                         @endif
@@ -114,15 +106,8 @@
                         <!-- Button -->
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-sm-6 float-left">
-                                    <button type="reset" class="btn btn-light" style="border:1px solid #cdcdcd;">
-                                        Cancelar
-                                    </button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i>
-                                        Salvar
-                                    </button>
+                                <div class="col text-center">
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
                                 </div>
                             </div>
                         </div>

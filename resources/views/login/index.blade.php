@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>DigiSac - Skeleton | Login</title>
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/vendor/digisac/core-integration-laravel/css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-primary">
@@ -20,7 +20,7 @@
                     <div class="col-lg-5">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header">
-                                <img class="w-100 p-4 " src="/img/logo-cor.png" alt="DigiSac - Plataforma Multicanal"
+                                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel/img/logo-cor.png" alt="DigiSac - Plataforma Multicanal"
                                      title="DigiSac - PABX Digital">
                             </div>
                             <div class="card-body">
@@ -65,6 +65,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="js/scripts.js"></script>
+<script src="/vendor/digisac/core-integration-laravel/js/scripts.js"></script>
 </body>
 </html>
