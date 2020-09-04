@@ -44,6 +44,7 @@ Route::get('/company/{id}/destroy', 'CompanyController@destroy')->name('company.
  */
 Route::get('/send-request', 'SendRequestController@index')->name('request.index')->middleware(['web','auth']);
 Route::get('/send-request/test','SendRequestController@test')->middleware(['web','auth']);
+Route::get('/send-request/{id}/view','SendRequestController@view')->middleware(['web','auth']);
 Route::get('/send-request/data', 'SendRequestController@data')->name('request.data')->middleware(['web','auth']);
 Route::get('/send-request/{id}/destroy', 'SendRequestController@destroy')->name('request.destroy')->middleware(['web','auth']);
 

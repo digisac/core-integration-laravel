@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DigiSac - Skeleton</title>
     <!-- Fonts -->
-    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="/vendor/digisac/core-integration-laravel/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">    <!-- Styles -->
     <link href="/vendor/digisac/core-integration-laravel/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Favicon -->
@@ -46,6 +46,19 @@
                 <i class="fas fa-fw fa-building"></i>
                 <span>Empresas</span>
             </a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-upload"></i>
+                <span>Requisições</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="/send-request?type=DigiSac">DigiSac</a>
+                    <a class="collapse-item" href="/send-request?type=Yank">Yank</a>
+                </div>
+            </div>
         </li>
     </ul>
     <!-- End of Sidebar -->
