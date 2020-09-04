@@ -33,6 +33,11 @@ class RepositoryServiceProvider extends ServiceProvider
             \DigiSac\Base\Repositories\TransactionRepository::class,
             \DigiSac\Base\Repositories\TransactionRepositoryEloquent::class
         );
+
+        $this->app->bind(
+            \DigiSac\Base\Repositories\SendRequestRepository::class,
+            \DigiSac\Base\Repositories\SendRequestRepositoryEloquent::class
+        );
     }
 
 }

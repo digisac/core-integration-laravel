@@ -2,10 +2,9 @@
 @section('title', 'Dashboard')
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Empresas
-        <a href="/company/create" class="btn btn-primary float-right"><i class="fa fa-building"></i> Nova Empresa</a>
+    <h1 class="h3 mb-2 text-gray-800">Requisições
     </h1>
-    <p class="mb-4">Listagem de empresas</a>.</p>
+    <p class="mb-4">Listagem de requisições</a>.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -17,11 +16,12 @@
                             <table class="table table-bordered yajra-datatable">
                                 <thead>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>URL</th>
-                                    <th>Token</th>
-                                    <th>CompanyID</th>
-                                    <th>Açoes</th>
+                                    <th>Data</th>
+                                    <th>Endpoint</th>
+                                    <th>Método</th>
+                                    <th>Tipo</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
                                 </tr>
                                 </thead>
 
@@ -50,17 +50,14 @@
                 serverSide: true,
                 searching: false,
                 lengthChange: false,
-                ajax: "{{ route('company.data') }}",
+                ajax: "{{ route('request.data') }}",
                 columns: [
-                    {data: 'name', name: 'name'},
-                    {data: 'url', name: 'url'},
-                    {data: 'token', name: 'token'},
-                    {data: 'company_id', name: 'company_id'},
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: true,
-                    },
+                    {data: 'created_at', name: 'created_at'},
+                    {data: 'endpoint', name: 'endpoint'},
+                    {data: 'method', name: 'method'},
+                    {data: 'type', name: 'type'},
+                    {data: 'status', name: 'status'},
+                    {data: 'action', name: 'action'},
                 ]
             });
 

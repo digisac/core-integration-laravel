@@ -22,7 +22,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon">
-                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel//img/logo.png" alt="DigiSac - Plataforma Multicanal"
+                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel/img/logo.png" alt="DigiSac - Plataforma Multicanal"
                      title="DigiSac - PABX Digital"/>
             </div>
         </a>
