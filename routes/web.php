@@ -48,5 +48,12 @@ Route::get('/send-request/{id}/view','SendRequestController@view')->middleware([
 Route::get('/send-request/data', 'SendRequestController@data')->name('request.data')->middleware(['web','auth']);
 Route::get('/send-request/{id}/destroy', 'SendRequestController@destroy')->name('request.destroy')->middleware(['web','auth']);
 
+/*
+ * Webhook
+ */
+Route::get('/webhook', 'WebhookController@index')->name('webhook.index')->middleware(['web','auth']);
+Route::get('/webhook/{id}/view','WebhookController@view')->middleware(['web','auth']);
+Route::get('/webhook/data', 'WebhookController@data')->name('webhook.data')->middleware(['web','auth']);
+Route::get('/webhook/{id}/destroy', 'WebhookController@destroy')->name('webhook.destroy')->middleware(['web','auth']);
 
 
