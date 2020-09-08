@@ -38,6 +38,11 @@ class RepositoryServiceProvider extends ServiceProvider
             \DigiSac\Base\Repositories\SendRequestRepository::class,
             \DigiSac\Base\Repositories\SendRequestRepositoryEloquent::class
         );
+
+        $this->app->bind(
+            \DigiSac\Base\Repositories\MetaDataSessionRepository::class,
+            \DigiSac\Base\Repositories\MetaDataSessionRepositoryEloquent::class
+        );
     }
 
 }

@@ -62,6 +62,7 @@ class DigiSacService
 
       $access = $this->accessAuthorizationRepository->findWhere([
         'contact_id' => $contact->contact_digisac_id,
+        'expired' => false,
         ['expire_at','>', $now] 
       ])->first();
 

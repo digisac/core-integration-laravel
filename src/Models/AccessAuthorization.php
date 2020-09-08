@@ -24,7 +24,8 @@ class AccessAuthorization extends BaseModel implements Transformable
     protected $fillable = [
         'company_id', 
         'contact_id',
-        'expire_at'
+        'expire_at',
+        'expired'
     ];
 
     protected $casts = [
