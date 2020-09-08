@@ -60,6 +60,17 @@
                 </div>
             </div>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <i class="fas fa-fw fa-download"></i>
+                <span>Webhook</span>
+            </a>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar" style="">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="/webhook?type=DigiSac">DigiSac</a>
+                </div>
+            </div>
+        </li>
     </ul>
     <!-- End of Sidebar -->
     <!-- Content Wrapper -->
