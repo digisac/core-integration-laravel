@@ -30,13 +30,22 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+      <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label">URL
                                             <span class="small text-danger">*</span>
                                         </label>
-                                        <input type="text" class="form-control" name="url"
-                                               placeholder="http://" value="{{ old('url',$Company->url) }}"/>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">https://</span>
+                                            </div>
+                                            <input type="text" class="form-control" name="url"
+                                                   placeholder="" value="{{ old('url',$Company->url) }}"/>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">.digisac.com.br</span>
+                                            </div>
+                                        </div>
                                         @if ($errors->has('url'))
                                             <span class="text-danger">{{ $errors->first('url') }}</span>
                                         @endif
