@@ -20,7 +20,7 @@ class DigiSacAppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	App::register( \Yajra\DataTables\DataTablesServiceProvider::class); //Register DataTable
+	    \App::register( \Yajra\DataTables\DataTablesServiceProvider::class); //Register DataTable
         $this->app->singleton(Context::class, CompanyContext::class);
     }
 
