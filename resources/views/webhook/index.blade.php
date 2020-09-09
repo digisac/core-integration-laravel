@@ -31,8 +31,7 @@
         </div>
     </div>
 
-    <script src="/vendor/digisac/core-integration-laravel/js/jquery.dataTables.min.js"></script>
-    <script src="/vendor/digisac/core-integration-laravel/js/dataTables.bootstrap4.min.js"></script>
+
     <script type="text/javascript">
         $(function () {
             var table = $('.yajra-datatable').DataTable({

@@ -7,11 +7,14 @@
     <title>DigiSac - Skeleton</title>
     <!-- Fonts -->
     <link href="/vendor/digisac/core-integration-laravel/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">    <!-- Styles -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">    <!-- Styles -->
     <link href="/vendor/digisac/core-integration-laravel/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="/vendor/digisac/core-integration-laravel/img/favicon.jpg" type="image/x-icon">
-    <script src="/vendor/digisac/core-integration-laravel/js/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/vendor/digisac/core-integration-laravel/js/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body id="page-top">
 <!-- Page Wrapper -->
@@ -22,7 +25,8 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon">
-                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel/img/logo.png" alt="DigiSac - Plataforma Multicanal"
+                <img class="w-100 p-4 " src="/vendor/digisac/core-integration-laravel/img/logo.png"
+                     alt="DigiSac - Plataforma Multicanal"
                      title="DigiSac - PABX Digital"/>
             </div>
         </a>
@@ -49,11 +53,13 @@
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+               aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-arrow-up"></i>
                 <span>Requisições</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                 style="">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/send-request?type=DigiSac">DigiSac</a>
                     <a class="collapse-item" href="/send-request?type=Yank">Yank</a>
@@ -61,11 +67,13 @@
             </div>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+               aria-controls="collapseThree">
                 <i class="fas fa-fw fa-arrow-down"></i>
                 <span>Webhook</span>
             </a>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar" style="">
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar"
+                 style="">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/webhook?type=DigiSac">DigiSac</a>
                 </div>
@@ -83,6 +91,25 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
+
+                <!-- Company -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong>Visualizando: </strong>{{$SelectedCompany ? $SelectedCompany->name : '--'}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        @if(count($companies))
+                            @foreach($companies as $CompanySelect)
+                                <a class="dropdown-item"
+                                   href="{{route('company.change',$CompanySelect->id)}}">Selecionar:
+                                    <strong>{{$CompanySelect->name}}</strong></a>
+                                <div class="dropdown-divider"></div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
@@ -113,7 +140,7 @@
             <div class="container-fluid">
                 @if(Session::has('message'))
                     <div class="alert alert-{{Session::get('message')['type']}} w-100 d-lg-block text-left">
-                        <strong class="w-100 d-lg-block">{{Session::get('message')['message']}}</strong>
+                        <strong class="w-100 d-lg-block">{!!Session::get('message')['message'] !!}</strong>
                     </div>
                     <?php   Session::remove('message'); ?>
                 @endif
@@ -143,10 +170,12 @@
 <script src="/vendor/digisac/core-integration-laravel/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="/vendor/digisac/core-integration-laravel/js/sb-admin-2.min.js"></script>
+<script src="/vendor/digisac/core-integration-laravel/js/jquery.dataTables.min.js"></script>
+<script src="/vendor/digisac/core-integration-laravel/js/dataTables.bootstrap4.min.js"></script>
 <script>
-    $(function(){
+    $(function () {
 
-        $('body').on('click','.delete',function(){
+        $('body').on('click', '.delete', function () {
             swal({
                 title: "Tem certeza que deseja deletar este registro?",
                 text: "Esta ação não poderá ser revertida.",
@@ -156,7 +185,7 @@
             })
                 .then((confirm) => {
                     if (confirm) {
-                       window.location = '/'+$(this).attr('data-url')+'/'+$(this).attr('data-id')+'/destroy';
+                        window.location = '/' + $(this).attr('data-url') + '/' + $(this).attr('data-id') + '/destroy';
                     } else {
                         //--
                     }

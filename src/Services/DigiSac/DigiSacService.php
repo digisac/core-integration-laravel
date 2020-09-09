@@ -3,7 +3,6 @@
 namespace DigiSac\Base\Services\DigiSac;
 
 use Event;
-use Carbon\Carbon;
 use DigiSac\Base\Events\DigiSacBotCommandEvent;
 use DigiSac\Base\Repositories\ContactRepository;
 use DigiSac\Base\Repositories\AccessAuthorizationRepository;

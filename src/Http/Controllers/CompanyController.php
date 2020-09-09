@@ -4,6 +4,7 @@ namespace DigiSac\Base\Http\Controllers;
 
 use DigiSac\Base\Http\Requests\CompanyRequest;
 use DigiSac\Base\Models\Company;
+use DigiSac\Base\Models\Contact;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -69,5 +70,17 @@ class CompanyController extends Controller
         $Company->delete();
 
         return redirect()->to('/company')->with(['message' => ['type' => 'success', 'message' => 'Empresa excluída com sucesso.']]);
+    }
+
+    /*
+     * Select Company
+     */
+    public function change(Request $request, $id)
+    {
+        $Company = Company::find($id);
+
+        \Session::put('SelectedCompany', $Company);
+
+        return redirect()->to('/')->with(['message' => ['type' => 'success', 'message' => 'Você está agora visualizando a empresa <strong>' . $Company->name . '</strong>.']]);
     }
 }
