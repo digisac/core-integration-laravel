@@ -50,7 +50,7 @@
 
         <li class="nav-item active">
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-upload"></i>
+                <i class="fas fa-fw fa-arrow-up"></i>
                 <span>Requisições</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
@@ -62,7 +62,7 @@
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <i class="fas fa-fw fa-download"></i>
+                <i class="fas fa-fw fa-arrow-down"></i>
                 <span>Webhook</span>
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar" style="">

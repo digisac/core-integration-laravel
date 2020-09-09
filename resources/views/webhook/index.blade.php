@@ -12,7 +12,7 @@
             <div>
                 <div class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="table-responsive">
                             <table class="table table-bordered yajra-datatable">
                                 <thead>
                                 <tr>
@@ -50,12 +50,4 @@
 
         });
     </script>
-    <style>
-        code {
-            background-color: #eee;
-            border-radius: 3px;
-            font-family: courier, monospace;
-            padding: 0 3px;
-        }
-    </style>
 @endsection
