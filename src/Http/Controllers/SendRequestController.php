@@ -113,8 +113,9 @@ class SendRequestController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $SendRequest = SendRequest::delete($id);
+        $SendRequest = SendRequest::find($id);
+        $SendRequest->delete();
 
-        return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
+	return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
     }
 }

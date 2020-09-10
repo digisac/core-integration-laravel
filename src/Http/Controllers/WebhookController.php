@@ -39,7 +39,8 @@ class WebhookController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $Webhook = DB::table('webhook')->delete($id);
+        $Webhook = Webhook::find($id);
+        $Webhook->delete();
 
         return redirect()->to('/webhook')->with(['message' => ['type' => 'success', 'message' => 'Requisiçao excluída com sucesso.']]);
     }
