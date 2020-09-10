@@ -20,13 +20,17 @@ class SendRequestController extends Controller
 
     public function data(Request $request)
     {
-        $data = DB::table('send_request');
+        $data = new SendRequest();
         if($request->get('type')){
             $data = $data->where('type',$request->get('type'));
         }
         $data = $data->latest()->get();
         return DataTables::of($data)
             ->addIndexColumn()
+            ->addColumn('endpoint',function ($row){
+                $endpoint = '<b><a href="'.$row->endpoint.'" target="_blank">' . $row->endpoint . '</a></b>';
+                return $endpoint;
+            })
             ->addColumn('created_at', function ($row) {
                 $date = \DateTime::createFromFormat('Y-m-d H:i:s', $row->created_at);
                 return $date->format('d/m/Y H:i');
@@ -37,12 +41,12 @@ class SendRequestController extends Controller
                 <a href="javascript:void(0)" data-url="send-request" data-id="' . $row->id . '" class="delete btn btn-danger btn-sm">Excluir</a>';
                 return $btn;
             })
-            ->rawColumns(['action', 'created_at'])
+            ->rawColumns(['endpoint','action', 'created_at'])
             ->make(true);
     }
 
     public function view(Request $request,$id){
-        $SendRequest = DB::table('send_request')->find($id);
+        $SendRequest = SendRequest::find($id);
 
         $return = [
             'type'=>$SendRequest->type,
@@ -109,8 +113,8 @@ class SendRequestController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $SendRequest = DB::table('send_request')->delete($id);
+        $SendRequest = SendRequest::delete($id);
 
-        return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Empresa excluída com sucesso.']]);
+        return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
     }
 }

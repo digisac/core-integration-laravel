@@ -4,7 +4,9 @@ namespace DigiSac\Base\Http\Controllers;
 
 use App\User;
 use DigiSac\Base\Http\Requests\LoginRequest;
+use DigiSac\Base\Models\Company;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -24,6 +26,9 @@ class LoginController extends Controller
         }
         //Logs user
         Auth::login($User);
+
+        //SetCompany
+        Session::put('SelectedCompany',Company::first());
 
         return redirect()->to('/');
     }

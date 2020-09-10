@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12 col-xxl-12 card card-custom card-stretch gutter-b">
                 <center class="p-5">
-                    <h1><strong>DigiSac - Skeleton v1.0.5</strong></h1>
+                    <h1><strong>DigiSac Skeleton Integration - <strong>{{getenv('APP_NAME')}}</strong> v1.1.1</strong></h1>
                 </center>
             </div>
         </div>
