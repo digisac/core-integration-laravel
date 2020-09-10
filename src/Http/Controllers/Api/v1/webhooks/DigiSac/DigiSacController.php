@@ -18,7 +18,13 @@ class DigiSacController extends Controller
     public function botCommand(Request $request)
     {
 
+<<<<<<< HEAD
         $data = $request->all();
+=======
+        //accountId
+
+
+>>>>>>> abc0dfc0b301448e7d99b9be2f261476a513cc19
         //Store request (DigiSac)
         $webhook = new Webhook();
         $webhook->id = file_get_contents('/proc/sys/kernel/random/uuid');
