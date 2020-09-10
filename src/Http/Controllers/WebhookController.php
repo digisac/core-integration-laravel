@@ -28,7 +28,18 @@ class WebhookController extends Controller
                 $code = '<code>'.$row->payload.'</code>';
                 return $code;
             })
-            ->rawColumns(['created_at','payload'])
+            ->addColumn('action', function ($row) {
+                $btn = '<a href="javascript:void(0)" data-url="webhook" data-id="' . $row->id . '" class="delete btn btn-danger btn-sm">Excluir</a>';
+                return $btn;
+            })
+            ->rawColumns(['action','created_at','payload'])
             ->make(true);
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $Webhook = DB::table('webhook')->delete($id);
+
+        return redirect()->to('/webhook')->with(['message' => ['type' => 'success', 'message' => 'Requisiçao excluída com sucesso.']]);
     }
 }
