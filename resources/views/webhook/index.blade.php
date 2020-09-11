@@ -2,22 +2,21 @@
 @section('title', 'Dashboard')
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Webhook</strong>
-    </h1>
+    <h1 class="h3 mb-2 text-gray-800">Webhook</h1>
     <p class="mb-4">Listagem de requisições recebidas (DigiSac).</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <div>
                 <div class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="table-responsive">
                             <table class="table table-bordered yajra-datatable">
                                 <thead>
                                 <tr>
                                     <th>Data/Hora</th>
                                     <th>Payload</th>
+                                    <th width="15%">Ação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -25,14 +24,11 @@
                             </table>
                         </div>
                     </div>
-
-                </div>
             </div>
         </div>
     </div>
 
-    <script src="/vendor/digisac/core-integration-laravel/js/jquery.dataTables.min.js"></script>
-    <script src="/vendor/digisac/core-integration-laravel/js/dataTables.bootstrap4.min.js"></script>
+
     <script type="text/javascript">
         $(function () {
             var table = $('.yajra-datatable').DataTable({
@@ -44,18 +40,11 @@
                 columns: [
                     {data: 'created_at', name: 'created_at'},
                     {data: 'payload', name: 'payload'},
+                    {data: 'action', name: 'action'},
                 ],
                 "order": [[0, "desc"]]
             });
 
         });
     </script>
-    <style>
-        code {
-            background-color: #eee;
-            border-radius: 3px;
-            font-family: courier, monospace;
-            padding: 0 3px;
-        }
-    </style>
 @endsection

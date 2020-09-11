@@ -38,6 +38,7 @@ Route::post('/company/store','CompanyController@store')->name('company.store')->
 Route::get('/company/{id}/edit', 'CompanyController@edit')->name('company.edit')->middleware(['web','auth']);
 Route::post('/company/{id}/update', 'CompanyController@update')->name('company.update')->middleware(['web','auth']);
 Route::get('/company/{id}/destroy', 'CompanyController@destroy')->name('company.destroy')->middleware(['web','auth']);
+Route::get('/company/{id}/change', 'CompanyController@change')->name('company.change')->middleware(['web','auth']);
 
 /*
  * SendRequest

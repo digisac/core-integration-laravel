@@ -17,12 +17,12 @@ class DigiSacController extends Controller
 
     public function botCommand(Request $request)
     {
-        $data = $request->all();
-
+	      $data = $request->all();
         //Store request (DigiSac)
         $webhook = new Webhook();
         $webhook->id = file_get_contents('/proc/sys/kernel/random/uuid');
         $webhook->payload = json_encode($data);
+        $webhook->company_id = $data['data']['accountId'];
         $webhook->save();
 
         //Continue to bot...

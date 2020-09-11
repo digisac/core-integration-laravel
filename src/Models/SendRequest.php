@@ -3,6 +3,7 @@
 namespace DigiSac\Base\Models;
 
 use Carbon\Carbon;
+use DigiSac\Base\Scopes\CompanyScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
@@ -24,6 +25,17 @@ class SendRequest extends BaseModel implements Transformable
         'response',
         'type',
         'status',
+        'company_id'
     ];
+
+    /*
+  * CompanyScope
+  * Filters company_id
+  */
+    protected static function boot()
+    {
+        static::addGlobalScope(new CompanyScope);
+        parent::boot();
+    }
 
 }
