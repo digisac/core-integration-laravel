@@ -25,9 +25,6 @@ class DigiSacController extends Controller
         $webhook->payload = json_encode($data);
         $webhook->save();
 
-
-
-
         //Continue to bot...
         if (!$data['event'] === 'bot.command') {
             return ['success' => 'success'];
