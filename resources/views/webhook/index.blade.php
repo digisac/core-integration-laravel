@@ -8,22 +8,22 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <div class="dataTables_wrapper dt-bootstrap4">
-                <div class="row">
-                    <div class="table-responsive">
-                        <table class="table table-bordered yajra-datatable">
-                            <thead>
-                            <tr>
-                                <th>Data/Hora</th>
-                                <th width="5%">Payload</th>
-                                <th width="15%">Ação</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                <div class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-bordered yajra-datatable">
+                                <thead>
+                                <tr>
+                                    <th>Data/Hora</th>
+                                    <th>Payload</th>
+                                    <th width="15%">Ação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -74,3 +74,4 @@
         });
     </script>
 @endsection
+

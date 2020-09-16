@@ -116,6 +116,7 @@ class SendRequestController extends Controller
         $SendRequest = SendRequest::find($id);
         $SendRequest->delete();
 
-        return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
+	return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
     }
 }
+

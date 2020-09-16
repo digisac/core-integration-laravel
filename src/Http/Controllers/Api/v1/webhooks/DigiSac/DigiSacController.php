@@ -39,8 +39,8 @@ class DigiSacController extends Controller
 
     public function botCommand(Request $request)
     {
+        
         $data = $request->all();
-
         //Store request (DigiSac)
         $webhook = new Webhook();
         $webhook->id = file_get_contents('/proc/sys/kernel/random/uuid');
@@ -49,7 +49,7 @@ class DigiSacController extends Controller
         $webhook->save();
         //Set Webhook id
         $data['id_webhook'] = $webhook->id;
-
+      
         /*
         * Trace_Request WEBHOOK
         */
@@ -72,3 +72,4 @@ class DigiSacController extends Controller
     }
 
 }
+

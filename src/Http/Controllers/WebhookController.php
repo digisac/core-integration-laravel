@@ -2,7 +2,10 @@
 
 namespace DigiSac\Base\Http\Controllers;
 
+<<<<<<< master
 use DigiSac\Base\Models\TraceRequest;
+=======
+>>>>>>> master
 use DigiSac\Base\Models\Webhook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,12 +36,10 @@ class WebhookController extends Controller
                 return $code;
             })
             ->addColumn('action', function ($row) {
-                $btn = '  <a href="javascript:void(0)" data-id="' . $row->id . '" class="view-request btn btn-primary btn-sm">Visualizar</a>
-                
-                <!--<a href="javascript:void(0)" data-url="webhook" data-id="' . $row->id . '" class="delete btn btn-danger btn-sm">Excluir</a>-->';
+                $btn = '<a href="javascript:void(0)" data-url="webhook" data-id="' . $row->id . '" class="delete btn btn-danger btn-sm">Excluir</a>';
                 return $btn;
             })
-            ->rawColumns(['action', 'created_at', 'payload'])
+            ->rawColumns(['action','created_at','payload'])
             ->make(true);
     }
 
@@ -57,3 +58,4 @@ class WebhookController extends Controller
         return view('core-integration-laravel::webhook.history')->with(['trace_requests' => $trace_requests])->render();
     }
 }
+
