@@ -2,7 +2,6 @@
 
 namespace DigiSac\Base\Http\Controllers;
 
-
 use DigiSac\Base\Models\TraceRequest;
 use DigiSac\Base\Models\Webhook;
 use Illuminate\Http\Request;
@@ -48,7 +47,6 @@ class WebhookController extends Controller
 
         return redirect()->to('/webhook')->with(['message' => ['type' => 'success', 'message' => 'Requisiçao excluída com sucesso.']]);
     }
-
     public function history(Request $request, $id)
     {
         $Webhook = Webhook::find($id);
