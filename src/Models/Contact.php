@@ -18,6 +18,7 @@ class Contact extends BaseModel implements Transformable
     public $incrementing = false;
 
     protected $fillable = [
+        'id',
         'company_id',
         'contact_digisac_id',
         'service_digisac_id'

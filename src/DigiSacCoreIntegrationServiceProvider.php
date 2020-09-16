@@ -19,17 +19,19 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       // \URL::forceScheme('https');
+	      \URL::forceScheme('https');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         //List companies
-        $companies = Company::all();
-        view()->share('companies',$companies);
-        //Select session Company
-        view()->composer('*', function ($view){
-            $view->with('SelectedCompany', \Session::get('SelectedCompany') );
-        });
+        if(\Schema::hasTable('companies')) {
+            $companies = Company::all();
+            view()->share('companies', $companies);
+            //Select session Company
+            view()->composer('*', function ($view) {
+                $view->with('SelectedCompany', \Session::get('SelectedCompany'));
+            });
+        }
     }
 
     /**
@@ -46,3 +48,4 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
 
     }
 }
+

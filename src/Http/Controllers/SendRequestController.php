@@ -119,3 +119,4 @@ class SendRequestController extends Controller
 	return redirect()->to('/send-request')->with(['message' => ['type' => 'success', 'message' => 'Requisição excluída com sucesso.']]);
     }
 }
+

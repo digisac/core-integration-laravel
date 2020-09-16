@@ -24,7 +24,6 @@ class DigiSacService
 
     public function botCommand($data)
     {
-
         $contact = $this->contactRepository->findWhere([
             'company_id' => $data['data']['accountId'],
             'contact_digisac_id' => $data['data']['contactId']
@@ -34,9 +33,8 @@ class DigiSacService
             $contact = $this->createContact($data);
         }
 
-
         if (!$this->isAccessAuthorizationExpired($contact)) {
-            return Event::dispatch(new AccessAuthorizationExpiredEvent($data, $contact));
+            //return Event::dispatch(new AccessAuthorizationExpiredEvent($data, $contact));
         }
 
         return Event::dispatch(new DigiSacBotCommandEvent($data, $contact));
@@ -46,6 +44,7 @@ class DigiSacService
     protected function createContact($data)
     {
         return $this->contactRepository->create([
+            'id' => file_get_contents('/proc/sys/kernel/random/uuid'),
             'company_id' => $data['data']['accountId'],
             'contact_digisac_id' => $data['data']['contactId'],
             'service_digisac_id' => $data['data']['message']['serviceId']
@@ -54,7 +53,6 @@ class DigiSacService
 
     protected function isAccessAuthorizationExpired($contact)
     {
-
         $now = new \DateTime();
 
         $access = $this->accessAuthorizationRepository->findWhere([

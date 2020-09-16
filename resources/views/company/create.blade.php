@@ -43,7 +43,7 @@
                                             <input type="text" class="form-control" name="url"
                                                    placeholder="" value="{{ old('url') }}"/>
                                             <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">.digisac.com.br</span>
+                                                <span class="input-group-text" id="basic-addon2">-api.digisac.app/v1/</span>
                                             </div>
                                         </div>
                                         @if ($errors->has('url'))
