@@ -47,6 +47,7 @@ class DigiSacController extends Controller
         $webhook->payload = json_encode($data);
         $webhook->company_id = $data['data']['accountId'];
         $webhook->save();
+        
         //Set Webhook id
         $data['id_webhook'] = $webhook->id;
       
@@ -72,4 +73,5 @@ class DigiSacController extends Controller
     }
 
 }
+
 

@@ -2,6 +2,7 @@
 
 namespace DigiSac\Base\Http\Controllers;
 
+
 use DigiSac\Base\Models\TraceRequest;
 use DigiSac\Base\Models\Webhook;
 use Illuminate\Http\Request;
@@ -55,4 +56,5 @@ class WebhookController extends Controller
         return view('core-integration-laravel::webhook.history')->with(['trace_requests' => $trace_requests])->render();
     }
 }
+
 
