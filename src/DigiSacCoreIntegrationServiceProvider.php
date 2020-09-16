@@ -24,14 +24,14 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         //List companies
-        if(\Schema::hasTable('companies')) {
+       /* if(\Schema::hasTable('companies')) {
             $companies = Company::all();
             view()->share('companies', $companies);
             //Select session Company
             view()->composer('*', function ($view) {
                 $view->with('SelectedCompany', \Session::get('SelectedCompany'));
             });
-        }
+	}*/
     }
 
     /**
