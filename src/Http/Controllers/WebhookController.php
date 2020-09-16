@@ -2,10 +2,7 @@
 
 namespace DigiSac\Base\Http\Controllers;
 
-<<<<<<< master
 use DigiSac\Base\Models\TraceRequest;
-=======
->>>>>>> master
 use DigiSac\Base\Models\Webhook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
