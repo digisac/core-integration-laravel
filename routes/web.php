@@ -56,5 +56,6 @@ Route::get('/webhook', 'WebhookController@index')->name('webhook.index')->middle
 Route::get('/webhook/{id}/view','WebhookController@view')->middleware(['web','auth']);
 Route::get('/webhook/data', 'WebhookController@data')->name('webhook.data')->middleware(['web','auth']);
 Route::get('/webhook/{id}/destroy', 'WebhookController@destroy')->name('webhook.destroy')->middleware(['web','auth']);
+Route::get('/webhook/{id}/history', 'WebhookController@history')->name('company.history')->middleware(['web','auth']);
 
 
