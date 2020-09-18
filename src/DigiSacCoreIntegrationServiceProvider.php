@@ -4,6 +4,7 @@ namespace DigiSac\Base;
 
 //use Collective\Html\HtmlServiceProvider;
 use DigiSac\Base\Models\Company;
+use EdsonAlvesan\DigiSac\Traits\ContactTrait;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
 use DigiSac\Base\Providers\EventServiceProvider;
@@ -19,19 +20,19 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	      \URL::forceScheme('https');
+	     // \URL::forceScheme('https');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         //List companies
-       /* if(\Schema::hasTable('companies')) {
+        if(\Schema::hasTable('companies')) {
             $companies = Company::all();
             view()->share('companies', $companies);
             //Select session Company
             view()->composer('*', function ($view) {
                 $view->with('SelectedCompany', \Session::get('SelectedCompany'));
             });
-	}*/
+        }
     }
 
     /**

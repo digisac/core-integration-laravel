@@ -39,7 +39,6 @@ class DigiSacController extends Controller
 
     public function botCommand(Request $request)
     {
-        
         $data = $request->all();
         //Store request (DigiSac)
         $webhook = new Webhook();
