@@ -33,7 +33,12 @@ class DigiSacService
             $contact = $this->createContact($data);
         }
 
+        //Não remover este if, bots que utilizam autenticação
+        //dependem dele.
+        // bots que não tem autenticação tratar na aplicação
+        // criando uma atenticação que não expira.
         if (!$this->isAccessAuthorizationExpired($contact)) {
+          
           return  Event::dispatch(new AccessAuthorizationExpiredEvent($data, $contact));
         }
 
