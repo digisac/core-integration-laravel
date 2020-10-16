@@ -80,7 +80,7 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar"
                  style="">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="/webhook?type=DigiSac">DigiSac</a>
+                    <a class="collapse-item" href="/webhook">DigiSac</a>
                 </div>
             </div>
         </li>

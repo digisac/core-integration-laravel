@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/integracao/{id}','LoginController@rdstation');
-
 /*
  * Login
  */

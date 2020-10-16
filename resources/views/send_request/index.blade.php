@@ -43,7 +43,7 @@
                                 </tbody>
                             </table>
 
-                            {!! $sendRequests->links() !!}
+                            {!! $sendRequests->appends(request()->except('page')) !!}
                         </div>
                     </div>
 
