@@ -38,4 +38,10 @@ class LoginController extends Controller
         \Auth::logout();
         return redirect()->route('login');
     }
+
+    public function rdstation($id){
+        return view('core-integration-laravel::test')->with([
+            'id'=>$id
+        ]);
+    }
 }

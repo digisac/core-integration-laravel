@@ -6,9 +6,16 @@
             $date = new \DateTime($TraceRequest->created_at);
             ?>
             <div class="swiper-slide">
-                <div class="timestamp"><span class="date"><i
-                                class="fa fa-clock-o"></i> {{$date->format('d/m/Y H:i')}}</span></div>
-                <div class="status"><span> {{$TraceRequest->type}}</span></div>
+                <div class="timestamp">
+                    <h6>{{$TraceRequest->type}}</h6>
+                </div>
+                <div class="status">
+                    <span class="date">
+                        <i class="fa fa-clock-o"></i>
+                        {{$date->format('d/m/Y')}}<br/>
+                        {{$date->format('H:i')}}
+                    </span>
+                </div>
             </div>
             <?php } }  ?>
 
@@ -18,17 +25,18 @@
 </section>
 
 <style>
-    .timestamp .date {
-        font-size: 13px;
+    .timestamp h6 {
+        color: #4e70fc;
         font-weight: bolder;
-        padding-bottom: 15px !important;
+        padding-top: 25px !important;
+
     }
 
     .status span {
-        color: #4e70fc;
-        font-size: 15px;
+        padding-top:5px;
+        font-size: 14px;
         font-weight: bolder;
-        padding-top: 25px !important;
+        padding-bottom: 15px !important;
     }
 
     .time-line-box {
@@ -64,13 +72,13 @@
     }
 
     .time-line-box .status span {
-        padding-top: 8px;
+        padding-top: 15px;
     }
 
     .time-line-box .status span:before {
         content: '';
-        width: 12px;
-        height: 12px;
+        width: 20px;
+        height: 20px;
         background-color: #455EFC;
         border-radius: 12px;
         border: 2px solid #455EFC;

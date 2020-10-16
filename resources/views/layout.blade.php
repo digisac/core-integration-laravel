@@ -15,6 +15,11 @@
     <link rel="shortcut icon" href="/vendor/digisac/core-integration-laravel/img/favicon.jpg" type="image/x-icon">
     <script src="/vendor/digisac/core-integration-laravel/js/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <!-- Datatables -->
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body id="page-top">
 <!-- Page Wrapper -->
@@ -62,7 +67,7 @@
                  style="">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/send-request?type=DigiSac">DigiSac</a>
-                    <a class="collapse-item" href="/send-request?type=Yank">Yank</a>
+                    <a class="collapse-item" href="/send-request?type={{getenv('APP_NAME')}}">{{getenv('APP_NAME')}}</a>
                 </div>
             </div>
         </li>

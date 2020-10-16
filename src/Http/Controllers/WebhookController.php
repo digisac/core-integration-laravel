@@ -14,30 +14,10 @@ class WebhookController extends Controller
 
     public function index()
     {
-
-        return view('core-integration-laravel::webhook.index');
-    }
-
-    public function data()
-    {
-        $data = Webhook::latest()->get();
-
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->addColumn('created_at', function ($row) {
-                $date = \DateTime::createFromFormat('Y-m-d H:i:s', $row->created_at);
-                return $date->format('d/m/Y H:i');
-            })
-            ->addColumn('payload', function ($row) {
-                $code = '<code>' . $row->payload . '</code>';
-                return $code;
-            })
-            ->addColumn('action', function ($row) {
-                $btn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="view-request btn btn-primary btn-sm">Visualizar</a>';
-                return $btn;
-            })
-            ->rawColumns(['action','created_at','payload'])
-            ->make(true);
+        $webhooks = Webhook::orderBy('created_at', 'DESC')->paginate(20);
+        return view('core-integration-laravel::webhook.index')->with([
+            'webhooks' => $webhooks
+        ]);
     }
 
     public function destroy(Request $request, $id)
@@ -47,12 +27,12 @@ class WebhookController extends Controller
 
         return redirect()->to('/webhook')->with(['message' => ['type' => 'success', 'message' => 'Requisiçao excluída com sucesso.']]);
     }
+
     public function history(Request $request, $id)
     {
         $Webhook = Webhook::find($id);
-        $trace_requests = TraceRequest::where('id_webhook',$Webhook->id)->orderBy('created_at','DESC')->get();
+        $trace_requests = TraceRequest::where('id_webhook', $Webhook->id)->orderBy('created_at', 'DESC')->get();
         return view('core-integration-laravel::webhook.history')->with(['trace_requests' => $trace_requests])->render();
     }
 }
-
 

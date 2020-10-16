@@ -10,21 +10,6 @@ use DigiSac\Base\Services\DigiSac\DigiSacService;
 
 class DigiSacController extends Controller
 {
-
-    /*
-     * - caso tenha 1 dentista
-            -> selecionar data
-
-        - caso mais
-            -> seleção de dentistas
-
-        - exibir no máximo 8 horarios
-
-        - exibir horários aleatórios caso tenha + de 8
-
-     */
-
-
     /**
      * @param Request $request
      * @return string
@@ -46,10 +31,10 @@ class DigiSacController extends Controller
         $webhook->payload = json_encode($data);
         $webhook->company_id = $data['data']['accountId'];
         $webhook->save();
-        
+
         //Set Webhook id
         $data['id_webhook'] = $webhook->id;
-      
+
         /*
         * Trace_Request WEBHOOK
         */

@@ -13,25 +13,11 @@ class CompanyController extends Controller
 
     public function index()
     {
-        return view('core-integration-laravel::company.index');
-    }
+        $companies = Company::orderBy('created_at', 'DESC')->paginate(20);
 
-    public function data()
-    {
-        $data = Company::latest()->get();
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->addColumn('url', function ($row) {
-                $url = '<b>' . $row->url . '</b>';
-                return $url;
-            })
-            ->addColumn('action', function ($row) {
-                $btn = '<a href="' . route('company.edit', $row->id) . '" class="edit btn btn-primary btn-sm">Editar</a>
-                        <a href="javascript:void(0)" data-url="company" data-id="' . $row->id . '" class="delete btn btn-danger btn-sm">Excluir</a>';
-                return $btn;
-            })
-            ->rawColumns(['action', 'url'])
-            ->make(true);
+        return view('core-integration-laravel::company.index')->with([
+            'companies' => $companies
+        ]);
     }
 
     public function create()

@@ -8,22 +8,33 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-                <div class="dataTables_wrapper dt-bootstrap4">
-                    <div class="row">
-                        <div class="table-responsive">
-                            <table class="table table-bordered yajra-datatable">
-                                <thead>
-                                <tr>
-                                    <th>Data/Hora</th>
-                                    <th>Payload</th>
-                                    <th width="15%">Ação</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+            <div class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-bordered ">
+                            <thead>
+                            <tr>
+                                <th>Data/Hora</th>
+                                <th>Payload</th>
+                                <th width="15%">Ação</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php if(count($webhooks)){
+                            foreach($webhooks as $Webhook){ ?>
+                            <tr>
+                                <td>{{\Carbon\Carbon::parse($Webhook->created_at)->format('d/m/Y')}}</td>
+                                <td><code>{{$Webhook->payload}}</code></td>
+                                <td><a href="javascript:void(0);" data-id="{{$Webhook->id }}"
+                                       class="view-request btn btn-primary btn-sm">Visualizar</a></td>
+                            </tr>
+                            <?php } } ?>
+                            </tbody>
+                        </table>
+
+                        {!! $webhooks->links() !!}
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +46,8 @@
         <div class="modal-dialog" style="max-width:100% !important;width:80% !important" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Histórico de Requisições</h5>
+                    <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Histórico de
+                        Requisições</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

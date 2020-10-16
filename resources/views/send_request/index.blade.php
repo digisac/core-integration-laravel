@@ -13,7 +13,7 @@
                 <div class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
                         <div class="table-responsive">
-                            <table class="table table-bordered yajra-datatable">
+                            <table class="table table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Data</th>
@@ -24,10 +24,26 @@
                                     <th>Ações</th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
+                                    <?php if(count($sendRequests)){
+                                        foreach($sendRequests as $SendRequest){ ?>
+                                            <tr>
+                                                <td>{{\Carbon\Carbon::parse($SendRequest->created_at)->format('d/m/Y')}}</td>
+                                                <td><a href="javascript:void(0);">{{$SendRequest->endpoint }}</a></td>
+                                                <td>{{$SendRequest->method}}</td>
+                                                <td>{{$SendRequest->type}}</td>
+                                                <td>{{$SendRequest->status}}</td>
+                                                <td>
+                                                    <a href="javascript:void(0)" data-id="{{$SendRequest->id}}" class="view-request btn btn-primary btn-sm" style="width:100%;">Visualizar</a>
+                                                    <a href="javascript:void(0)" data-url="send-request" data-id="{{$SendRequest->id}}" class="delete btn btn-danger btn-sm" style="width:100%;">Excluir</a>
+                                                </td>
+                                            </tr>
+                                        <?php }
+                                    } ?>
                                 </tbody>
                             </table>
+
+                            {!! $sendRequests->links() !!}
                         </div>
                     </div>
 
