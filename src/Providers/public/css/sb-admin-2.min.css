@@ -3004,7 +3004,7 @@ a.btn.disabled, fieldset:disabled a.btn {
     font-size: .76563rem;
     line-height: 1.5;
     border-radius: .2rem;
-   /* width: 100%;*/
+    /* width: 100%;*/
     margin-top: 2px;
 }
 
@@ -11769,6 +11769,7 @@ code {
     border-radius: 3px;
     font-family: courier, monospace;
     padding: 0 3px;
+    max-width:900px !important;
 }
 
 .dropdown-divider:last-of-type{

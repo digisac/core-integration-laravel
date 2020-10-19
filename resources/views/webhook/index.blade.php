@@ -25,7 +25,7 @@
                             <tr>
                                 <td>{{\Carbon\Carbon::parse($Webhook->created_at)->format('d/m/Y')}}</td>
                                 <td><code>{{$Webhook->payload}}</code></td>
-                                <td><a href="javascript:void(0);" data-id="{{$Webhook->id }}"
+                                <td  style="text-align: center;"><a href="javascript:void(0);" data-id="{{$Webhook->id }}"
                                        class="view-request btn btn-primary btn-sm">Visualizar</a></td>
                             </tr>
                             <?php } } ?>
