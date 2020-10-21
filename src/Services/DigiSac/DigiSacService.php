@@ -34,7 +34,7 @@ class DigiSacService
         }
 
         if (!$this->isAccessAuthorizationExpired($contact)) {
-            Event::dispatch(new AccessAuthorizationExpiredEvent($data, $contact));
+          return  Event::dispatch(new AccessAuthorizationExpiredEvent($data, $contact));
         }
 
         return Event::dispatch(new DigiSacBotCommandEvent($data, $contact));
