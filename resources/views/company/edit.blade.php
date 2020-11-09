@@ -37,14 +37,14 @@
                                         </label>
 
                                         <div class="input-group mb-3">
-                                            <div class="input-group-append">
+                                            <!-- <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">https://</span>
-                                            </div>
+                                            </div> -->
                                             <input type="text" class="form-control" name="url"
                                                    placeholder="" value="{{ old('url',$Company->url) }}"/>
-                                            <div class="input-group-append">
+                                            <!-- <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">-api.digisac.app/v1/</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         @if ($errors->has('url'))
                                             <span class="text-danger">{{ $errors->first('url') }}</span>

@@ -20,7 +20,10 @@ class DigiSacCoreIntegrationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	     \URL::forceScheme('https');
+         
+        if (\Request::getHost() !== 'localhost') {
+            \URL::forceScheme('https');
+        }
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
