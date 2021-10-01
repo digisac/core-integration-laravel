@@ -40,6 +40,14 @@ Route::get('/company/{id}/destroy', 'CompanyController@destroy')->name('company.
 Route::get('/company/{id}/change', 'CompanyController@change')->name('company.change')->middleware(['web','auth']);
 
 /*
+ * Company API
+ */
+Route::post('/api/company/store', 'CompanyApiController@store');
+Route::get('/api/company/list', 'CompanyApiController@list');
+Route::post('/api/company/update/{id}', 'CompanyApiController@update');
+Route::post('/api/company/destroy/{id}', 'CompanyApiController@destroy');
+
+/*
  * SendRequest
  */
 Route::get('/send-request', 'SendRequestController@index')->name('request.index')->middleware(['web','auth']);
