@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
                 'id' => file_get_contents('/proc/sys/kernel/random/uuid'),
                 'name' => 'DigiSac Admin',
                 'email' => 'admin@digisac.com.br',
-                'password' => md5('digisac123')
+                'password' => md5('Digisac@2023#')
             )
         );
     }
