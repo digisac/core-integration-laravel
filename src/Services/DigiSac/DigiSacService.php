@@ -47,7 +47,7 @@ class DigiSacService
             'id' => file_get_contents('/proc/sys/kernel/random/uuid'),
             'company_id' => $data['data']['accountId'],
             'contact_digisac_id' => $data['data']['contactId'],
-            'service_digisac_id' => $data['data']['message']['serviceId']
+            'service_digisac_id' => isset($data['data']['message']) ? $data['data']['message']['serviceId'] : $data['data']['contact']['serviceId']
         ]);
     }
 
