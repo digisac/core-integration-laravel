@@ -21,17 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-        });
-
-        //DEV
-        \Illuminate\Support\Facades\DB::table('users')->insert(
-            array(
-                'id' => file_get_contents('/proc/sys/kernel/random/uuid'),
-                'name' => 'DigiSac Admin',
-                'email' => 'admin@digisac.com.br',
-                'password' => md5('Digisac@2023#')
-            )
-        );
+        });        
     }
 
     /**
